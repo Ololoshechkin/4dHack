@@ -24,11 +24,29 @@ class ButtonsCell: AbstractOptionCell {
         parentTableView?.present(alert, animated: true)
     }
     
-    @IBAction func go(_ sender: Any) {
+    private func uncheckedGo() {
         if (GlobalInfo.smsIsEnabled) {
             parentTableView?.sendBySms()
         } else {
             // TODO
+        }
+    }
+    
+    private func caffesEnabled() -> Bool {
+        print((GlobalInfo.options["caffe"] as! [String: Any])["chosen"] as! Bool)
+        return (GlobalInfo.options["caffe"] as! [String: Any])["chosen"] as! Bool
+    }
+    
+    @IBAction func go(_ sender: Any) {
+        if (GlobalInfo.duration >= 60 * 4 && !caffesEnabled()) {
+            let alert = UIAlertController(title: "Mind caffes", message: "Your walk takes more than 4 hours. Having a meal strongly recomended!", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "add caffe", style: .default) { _ in })
+            alert.addAction(UIAlertAction(title: "go anyway!", style: .default) { _ in
+                self.uncheckedGo()
+            })
+            parentTableView?.present(alert, animated: true)
+        } else {
+            self.uncheckedGo()
         }
     }
     

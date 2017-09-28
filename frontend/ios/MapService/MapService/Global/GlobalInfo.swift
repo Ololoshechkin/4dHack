@@ -32,3 +32,5 @@ let showPlaces = ["Isaakievski sobor", "Nevskiy prospect",
 
 let StasPhoneNumber = "+79818227869"
 
+let hashtags = ["for walking", "for girlfrend", "for weddings", "for bikers", "for tourists"]
+

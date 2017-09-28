@@ -11,7 +11,7 @@ import MessageUI
 
 class APIWorker {
     
-    class func getTopRoutes() -> [TopRoute] {
+    class func getTopRoutes(_ hashTags: [String]) -> [TopRoute] {
         return testRoutes
     }
     

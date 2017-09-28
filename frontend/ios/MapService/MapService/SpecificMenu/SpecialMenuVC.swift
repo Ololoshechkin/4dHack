@@ -14,6 +14,11 @@ class SpecialMenuVC: UITableViewController {
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
+        /*GlobalInfo.options["caffe"] = ["type": "restaurant", "chosen" : true, "time": "null"]
+        GlobalInfo.options["shop"] = ["type " : "food", "chosen": false]
+        defaultOptions.forEach { option in
+            GlobalInfo.options[option] = false*/
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,4 +113,5 @@ class SpecialMenuVC: UITableViewController {
         GlobalInfo.removePlace(at: index)
         tableView.reloadData()
     }
+    
 }

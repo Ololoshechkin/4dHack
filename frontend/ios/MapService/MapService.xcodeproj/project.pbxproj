@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD61935B1F7DB474003277A0 /* HTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD61935A1F7DB474003277A0 /* HTButton.swift */; };
 		DD8351C71F7DB25D00FE3B20 /* HashtagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8351C61F7DB25D00FE3B20 /* HashtagVC.swift */; };
 		DD8351C91F7DB26700FE3B20 /* HTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8351C81F7DB26700FE3B20 /* HTCell.swift */; };
 		DDEDB78A1F7D176400D31AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEDB7891F7D176400D31AB1 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD61935A1F7DB474003277A0 /* HTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTButton.swift; sourceTree = "<group>"; };
 		DD8351C61F7DB25D00FE3B20 /* HashtagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagVC.swift; sourceTree = "<group>"; };
 		DD8351C81F7DB26700FE3B20 /* HTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCell.swift; sourceTree = "<group>"; };
 		DDEDB7861F7D176400D31AB1 /* MapService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapService.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 			children = (
 				DD8351C61F7DB25D00FE3B20 /* HashtagVC.swift */,
 				DD8351C81F7DB26700FE3B20 /* HTCell.swift */,
+				DD61935A1F7DB474003277A0 /* HTButton.swift */,
 			);
 			path = "Search Hashtags";
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				DD8351C91F7DB26700FE3B20 /* HTCell.swift in Sources */,
 				DDEDB7921F7D176400D31AB1 /* MapService.xcdatamodeld in Sources */,
 				DDEDB7C81F7D90F800D31AB1 /* AbstractOptionCell.swift in Sources */,
+				DD61935B1F7DB474003277A0 /* HTButton.swift in Sources */,
 				DDEDB7B71F7D40AC00D31AB1 /* GeneralMenuVC.swift in Sources */,
 				DDEDB7BD1F7D59AA00D31AB1 /* ShopCell.swift in Sources */,
 				DDEDB78A1F7D176400D31AB1 /* AppDelegate.swift in Sources */,

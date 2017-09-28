@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="0.97227032229999999" green="0.97920274169999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="popularRoutes:" destination="EP7-9Q-tHG" eventType="touchUpInside" id="rCP-d2-Gs3"/>
+                                    <segue destination="Dsf-gA-Yh9" kind="push" id="P9E-Ay-dkS"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X0Y-QF-sSO">
@@ -186,17 +186,43 @@
             </objects>
             <point key="canvasLocation" x="1661.5999999999999" y="-1786.0569715142431"/>
         </scene>
-        <!--Table View Controller-->
+        <!--HashtagVC-->
         <scene sceneID="S9b-8J-dZG">
             <objects>
-                <tableViewController id="Dsf-gA-Yh9" sceneMemberID="viewController">
+                <tableViewController id="Dsf-gA-Yh9" customClass="HashtagVC" customModule="MapService" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HMr-ND-lvv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.19850491749999999" green="0.19850491749999999" blue="0.19850491749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="4jW-zV-flK">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HTButton" rowHeight="60" id="cMe-n5-Ey0" customClass="HTButton" customModule="MapService" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cMe-n5-Ey0" id="AXY-Mg-Q4Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rah-5y-4yw">
+                                            <rect key="frame" x="8" y="8" width="398" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <state key="normal" title="Search!"/>
+                                            <connections>
+                                                <segue destination="wWL-RE-GH5" kind="push" id="lqK-Qd-7Mq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rah-5y-4yw" firstAttribute="leading" secondItem="AXY-Mg-Q4Q" secondAttribute="leadingMargin" id="0hb-7p-nag"/>
+                                        <constraint firstItem="rah-5y-4yw" firstAttribute="top" secondItem="AXY-Mg-Q4Q" secondAttribute="topMargin" id="4mX-uo-7uf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rah-5y-4yw" secondAttribute="bottom" id="aJQ-9P-GRn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rah-5y-4yw" secondAttribute="trailing" id="oEg-18-epR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.26464950520000002" green="0.48568044939999999" blue="0.13483942469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HTCell" rowHeight="60" id="4jW-zV-flK" customClass="HTCell" customModule="MapService" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4jW-zV-flK" id="B2B-ss-Y3B">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -210,6 +236,9 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRc-3U-6Ke">
                                             <rect key="frame" x="345" y="14.333333333333336" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switch:" destination="4jW-zV-flK" eventType="valueChanged" id="tM2-sH-zkw"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -220,6 +249,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.23324476520000001" green="0.23324476520000001" blue="0.23324476520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="hashtag" destination="l1d-aG-7t0" id="lwD-99-ftr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -227,6 +259,7 @@
                             <outlet property="delegate" destination="Dsf-gA-Yh9" id="bM2-rb-mqR"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="yMO-cO-XKH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOt-9f-U9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -545,6 +578,9 @@
                                         </textField>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJC-Wc-rHa">
                                             <rect key="frame" x="347" y="39.666666666666671" width="51" height="31.000000000000014"/>
+                                            <connections>
+                                                <action selector="choose:" destination="VZt-9C-gBm" eventType="valueChanged" id="ibH-TK-iM7"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <color key="backgroundColor" red="0.23324476522842641" green="0.23324476522842641" blue="0.23324476522842641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

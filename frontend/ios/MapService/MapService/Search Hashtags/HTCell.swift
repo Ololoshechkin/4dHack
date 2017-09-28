@@ -11,6 +11,13 @@ import UIKit
 
 class HTCell: UITableViewCell {
     
+    var parentVC: HashtagVC? = nil
+    
+    @IBOutlet weak var hashtag: UILabel!
+    
+    @IBAction func `switch`(_ sender: Any) {
+        parentVC?.changeFilter(for: hashtag.text!)
+    }
     
     
     

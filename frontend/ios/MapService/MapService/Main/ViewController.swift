@@ -27,13 +27,5 @@ class ViewController: UIViewController {
         GlobalInfo.smsIsEnabled = smsEnabled.isOn
     }
     
-    @IBAction func popularRoutes(_ sender: Any) {
-        let topRoutes = storyboard?.instantiateViewController(
-            withIdentifier: "TopRoutes"
-        ) as! TopViewController
-        topRoutes.topRoutes = APIWorker.getTopRoutes()
-        navigationController?.pushViewController(topRoutes, animated: true)
-    }
-    
 }
 

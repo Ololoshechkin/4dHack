@@ -1,5 +1,5 @@
 //
-//  HashtagVC.swift
+//  HTButton.swift
 //  MapService
 //
 //  Created by Vadim on 29/09/2017.
@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+class HTButton: UITableViewCell {
+    
+    
+    
+    
+}

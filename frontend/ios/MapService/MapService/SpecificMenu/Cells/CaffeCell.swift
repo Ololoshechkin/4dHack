@@ -27,6 +27,9 @@ class CaffeCell: AbstractSpecificOptionCell {
     
     @IBOutlet weak var chosen: UISwitch!
     
+    @IBAction func choose(_ sender: Any) {
+        update()
+    }
     override func getName() -> String {
         return "caffe"
     }
@@ -38,5 +41,5 @@ class CaffeCell: AbstractSpecificOptionCell {
             "time": timeTextbox.text ?? "null"
         ]
     }
-    
+        
 }
