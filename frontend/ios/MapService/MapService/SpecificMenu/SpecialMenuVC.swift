@@ -126,4 +126,5 @@ class SpecialMenuVC: UITableViewController, CLLocationManagerDelegate {
         tableView.reloadData()
     }
     
+    
 }

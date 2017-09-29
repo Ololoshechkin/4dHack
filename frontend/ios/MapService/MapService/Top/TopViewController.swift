@@ -32,8 +32,11 @@ class TopViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let token = topRoutes[indexPath.row].id
-        print(token) // TODO server request
+        let url = "http://192.168.1.163:5000?huy=59.935780,30.325893,59.934204,30.324592,59.938078,30.317295,59.939833,30.314593,59.942948,30.252050"
+        UIApplication.shared.open(URL(string: url)!,
+            options: [:],
+            completionHandler: { (succ: Bool) in print("Complete! Success? \(succ)")
+        })
     }
     
 }

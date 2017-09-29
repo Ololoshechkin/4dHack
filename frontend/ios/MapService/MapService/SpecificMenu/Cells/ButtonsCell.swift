@@ -21,6 +21,7 @@ class ButtonsCell: AbstractOptionCell {
                 self.parentTableView?.addCell(with: showplace)
             })
         }
+        alert.addAction(UIAlertAction(title: "dismiss", style: .default) { _ in })
         parentTableView?.present(alert, animated: true)
     }
     

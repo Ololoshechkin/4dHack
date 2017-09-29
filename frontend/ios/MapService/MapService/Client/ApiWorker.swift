@@ -16,6 +16,12 @@ class APIWorker {
         return testRoutes
     }
     
+    private class func whiteless(_ s: String) -> String {
+        return String(s.characters.map({ c -> Character in
+            c == " " ? "_" : c
+        }))
+    }
+    
     class func getLink() -> String {
         var url = "http://192.168.1.163:5000?"
         url += "start=\(GlobalInfo.getFrom())&"
@@ -23,16 +29,18 @@ class APIWorker {
         url += "duration=\(GlobalInfo.duration)&"
         url += "duration_on_foot=\(GlobalInfo.walkDuration)&"
         url += "money=\(GlobalInfo.budget)&"
-        url += "temp_place=\(GlobalInfo.places.map { s in s! }.joined(separator: ","))"
-        if (GlobalInfo.options["shop"] != nil) {
-            let shopOption = GlobalInfo.options["shop"] as! [String: Any]
-            if ((shopOption["chosen"] as! Bool) == true) {
-                url += (GlobalInfo.places.isEmpty ? "" : ",") + "\(shopOption["type"] as! String) shop"
+        if (!GlobalInfo.places.isEmpty || !GlobalInfo.options.isEmpty) {
+            url += "temp_place=\(GlobalInfo.places.map { s in whiteless(s!) }.joined(separator: ","))"
+            if (GlobalInfo.options["shop"] != nil) {
+                let shopOption = GlobalInfo.options["shop"] as! [String: Any]
+                if ((shopOption["chosen"] as! Bool) == true) {
+                    url += (GlobalInfo.places.isEmpty ? "" : ",") + "\(shopOption["type"] as! String) shop"
+                }
             }
-        }
-        GlobalInfo.options.forEach { (key, value) in
-            if (value is Bool && (value as! Bool)) {
-                url += (GlobalInfo.places.isEmpty ? "" : ",") + "\(key)"
+            GlobalInfo.options.forEach { (key, value) in
+                if (value is Bool && (value as! Bool)) {
+                    url += (GlobalInfo.places.isEmpty ? "" : ",") + "\(key)"
+                }
             }
         }
         if (GlobalInfo.options["caffe"] != nil) {

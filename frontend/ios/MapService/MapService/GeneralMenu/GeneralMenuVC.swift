@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 import MessageUI
+import CoreLocation
 
-class GeneralMenuVC: UIViewController {
+class GeneralMenuVC: UIViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     let (minDuration, maxDuration) = (1, 600)
     var duration: Int = 300
@@ -30,6 +33,10 @@ class GeneralMenuVC: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.hideKeyboardWhenTappedAround()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -111,10 +118,16 @@ class GeneralMenuVC: UIViewController {
     }
     
     @IBAction func go(_ sender: Any) {
+        let location = locationManager.location!.coordinate
+        GlobalInfo.currentLocation = "\(location.latitude),\(location.longitude)"
         if (GlobalInfo.smsIsEnabled) {
              sendBySms()
         } else {
-            // TODO
+            UIApplication.shared.open(URL(
+                string: APIWorker.getLink())!,
+                options: [:],
+                completionHandler: { (succ: Bool) in print("Complete! Success? \(succ)")
+            })
         }
     }
     

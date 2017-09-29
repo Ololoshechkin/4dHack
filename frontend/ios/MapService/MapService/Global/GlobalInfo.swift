@@ -35,9 +35,9 @@ class GlobalInfo {
 let defaultOptions = ["Park", "WC", "bike stop", "bridge", "back on taxi"]
 
 let showPlaces = ["Isaakievski sobor", "Nevskiy prospect",
-                  "Hermitage", "Russian museum", "Mariinski theatre"]
+                  "Hermitage", "Russian museum", "Mariinski theatre", "Zinger's house"]
 
 let StasPhoneNumber = "+79818227869"
 
-let hashtags = ["for walking", "for girlfrend", "for weddings", "for bikers", "for tourists"]
+let hashtags = ["for walking", "for girlfrend", "for weddings", "for bikers", "for tourists", "for photographers"]
 
