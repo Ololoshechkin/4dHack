@@ -10,18 +10,25 @@ import Foundation
 
 class GlobalInfo {
     static var smsIsEnabled: Bool = false
-    static var from: String = "my location"
+    static var from: String = "my current location"
     static var to: String = "return back"
     static var duration: Int = 180
     static var walkDuration: Int = 180
     static var budget: Int = 0
     static var options = [String: Any]()
     static var places = [String?]()
+    static var currentLocation: String = "0,0"
     static func addPlace(_ text: String = "") {
         places.append(text)
     }
     static func removePlace(at index: Int) {
         places.remove(at: index)
+    }
+    static func getFrom() -> String {
+        return from == "my current location" ? currentLocation : from
+    }
+    static func getTo() -> String {
+        return from == "my current location" ? currentLocation : from
     }
 }
 

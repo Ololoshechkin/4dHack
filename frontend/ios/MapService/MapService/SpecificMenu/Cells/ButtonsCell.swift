@@ -25,10 +25,16 @@ class ButtonsCell: AbstractOptionCell {
     }
     
     private func uncheckedGo() {
+        let location = parentTableView?.locationManager.location!.coordinate
+        GlobalInfo.currentLocation = "\(location!.latitude),\(location!.longitude)"
         if (GlobalInfo.smsIsEnabled) {
             parentTableView?.sendBySms()
         } else {
-            // TODO
+            UIApplication.shared.open(URL(
+                string: APIWorker.getLink())!,
+                options: [:],
+                completionHandler: { (succ: Bool) in print("Complete! Success? \(succ)")
+            })
         }
     }
     
@@ -44,6 +50,10 @@ class ButtonsCell: AbstractOptionCell {
             alert.addAction(UIAlertAction(title: "go anyway!", style: .default) { _ in
                 self.uncheckedGo()
             })
+            parentTableView?.present(alert, animated: true)
+        } else if ((GlobalInfo.options["caffe"] as! [String: Any])["time"] as! String == "null") {
+            let alert = UIAlertController(title: "Enter caffe time", message: nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "dismiss", style: .default) { _ in })
             parentTableView?.present(alert, animated: true)
         } else {
             self.uncheckedGo()

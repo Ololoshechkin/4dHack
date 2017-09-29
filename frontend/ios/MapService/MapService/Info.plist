@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>our app requires location services in order to get your current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>we need access to your location to check it in real-time</string>
 </dict>
 </plist>

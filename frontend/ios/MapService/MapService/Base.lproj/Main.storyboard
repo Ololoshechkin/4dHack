@@ -718,11 +718,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZw-tU-Em3">
-                                            <rect key="frame" x="322" y="8" width="84" height="73.666666666666671"/>
+                                            <rect key="frame" x="86.666666666666657" y="8" width="314.33333333333337" height="73.666666666666671"/>
                                             <color key="backgroundColor" red="0.1739505942" green="0.69737468270000003" blue="0.14148784140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="KZw-tU-Em3" secondAttribute="height" multiplier="49:43" id="V2C-HV-Dsu"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="GO!">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -732,8 +729,11 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtk-90-W4I">
-                                            <rect key="frame" x="8" y="8" width="309" height="73.666666666666671"/>
+                                            <rect key="frame" x="8" y="8" width="73.666666666666671" height="73.666666666666671"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="mtk-90-W4I" secondAttribute="height" multiplier="1:1" id="W0Z-v2-Fpt"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <state key="normal" title="+">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -746,7 +746,7 @@
                                     <constraints>
                                         <constraint firstItem="mtk-90-W4I" firstAttribute="top" secondItem="XnV-dR-DJq" secondAttribute="topMargin" id="27q-8O-gIf"/>
                                         <constraint firstItem="mtk-90-W4I" firstAttribute="leading" secondItem="XnV-dR-DJq" secondAttribute="leadingMargin" id="JtD-rQ-Pct"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="KZw-tU-Em3" secondAttribute="trailing" id="QMH-8W-BVk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KZw-tU-Em3" secondAttribute="trailing" constant="5" id="SYw-9B-dGH"/>
                                         <constraint firstItem="KZw-tU-Em3" firstAttribute="top" secondItem="XnV-dR-DJq" secondAttribute="topMargin" id="UNB-4D-Xpt"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="KZw-tU-Em3" secondAttribute="bottom" id="dNJ-nE-0P4"/>
                                         <constraint firstItem="KZw-tU-Em3" firstAttribute="leading" secondItem="mtk-90-W4I" secondAttribute="trailing" constant="5" id="eUD-Un-MKM"/>

@@ -31,7 +31,7 @@ class ShopCell: AbstractSpecificOptionCell {
     
     override func getMap() -> [String : Any] {
         return [
-            "type " : types[type.selectedSegmentIndex],
+            "type" : types[type.selectedSegmentIndex],
             "chosen": chosen.isOn
         ]
     }

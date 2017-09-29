@@ -9,16 +9,28 @@
 import Foundation
 import UIKit
 import MessageUI
+import CoreLocation
 
-class SpecialMenuVC: UITableViewController {
+class SpecialMenuVC: UITableViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
     
     override func viewDidLoad() {
         self.hideKeyboardWhenTappedAround()
-        /*GlobalInfo.options["caffe"] = ["type": "restaurant", "chosen" : true, "time": "null"]
+        GlobalInfo.options["caffe"] = ["type": "restaurant", "chosen" : true, "time": "null"]
         GlobalInfo.options["shop"] = ["type " : "food", "chosen": false]
         defaultOptions.forEach { option in
-            GlobalInfo.options[option] = false*/
+            GlobalInfo.options[option] = false
         }
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
